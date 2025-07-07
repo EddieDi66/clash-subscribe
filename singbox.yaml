@@ -1,0 +1,21 @@
+proxies:
+  - name: Mac-Singbox
+    type: vmess
+    server: 100.80.194.62
+    port: 10001
+    uuid: 1f7c765e-1234-4321-8888-abcdef123456
+    cipher: auto
+    network: ws
+    ws-opts:
+      path: /websocket
+    udp: true
+
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - Mac-Singbox
+      - DIRECT
+
+rules:
+  - MATCH,🚀 节点选择
